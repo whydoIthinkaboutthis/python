@@ -1,0 +1,35 @@
+import math
+
+while True:
+    a = input("Enter a number (or type 'enter' to exit): ")
+    
+    if a == 'enter':
+        break
+    else:
+        b = input("Enter a sign: ")
+        
+        if b == '^':
+            exponent = int(input("Enter the exponent: "))
+            result = math.pow(int(a), exponent)
+            print("Result:", result)
+        elif b == '~':
+            result = math.sqrt(int(a))
+            print("Result:", result)
+        elif b in ['+', '-', '*', '/']:
+            c = int(input("Enter another number: "))
+            
+            if b == '+':
+                result = int(a) + c
+            elif b == '-':
+                result = int(a) - c
+            elif b == '*':
+                result = int(a) * c
+            elif b == '/':
+                if c != 0:
+                    result = int(a) / c
+                else:
+                    print("Cannot divide by zero.")
+                    continue
+            print("Result:", result)
+        else:
+            print("Invalid sign. Please enter '+', '-', '*', '/', '^', or '~'.")
